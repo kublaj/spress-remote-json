@@ -1,0 +1,16 @@
+{
+    "name": "knorthfield/spress-remote-json",
+    "type": "spress-plugin",
+    "description": "Spress plugin to add remote_json() function to Twig templates",
+    "keywords": ["spress", "plugin"],
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Kris Northfield",
+            "email": "kris@northfieldx.co.uk"
+        }
+    ],
+    "require": {
+        "spress/spress-installer": "2.0.*"
+    }
+}
