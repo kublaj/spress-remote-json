@@ -35,7 +35,7 @@ class KnorthfieldSpressRemoteJson implements PluginInterface
 			
 			$cache_file = '.cache/' . sha1($url);
 			
-			if (file_exists($cache_file) && (filemtime($cache_file) > (time() - 60 ))) {
+			if (file_exists($cache_file) && (filemtime($cache_file) > (time() - 60 * 5 ))) {
 				$json = file_get_contents($cache_file);
 			} else {
 				$json = file_get_contents($url);
