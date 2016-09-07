@@ -38,7 +38,9 @@ class KnorthfieldSpressRemoteJson implements PluginInterface
 			if (file_exists($cache_file) && (filemtime($cache_file) > (time() - 60 * 5 ))) {
 				$json = file_get_contents($cache_file);
 			} else {
-				$json = file_get_contents($url);
+				$options = array('http' => array('user_agent' => 'spress/'.Yosymfony\Spress\Core\Spress::VERSION));
+				$context  = stream_context_create($options);
+				$json = file_get_contents($url, false, $context);
 				file_put_contents($cache_file, $json, LOCK_EX);
 			}
 			
